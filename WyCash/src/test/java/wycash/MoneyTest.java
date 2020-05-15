@@ -16,7 +16,7 @@ public class MoneyTest {
 	//hashCode()
 	//Equal null
 	//Equal object
-	//Dollar/Franc duplication
+	//Compare Francs with Dollars
 	//
 	//DONE:
 	//$5 * 2 = $10
@@ -24,6 +24,7 @@ public class MoneyTest {
 	//Dollar side-effects?
 	//equals()
 	//Make amount private
+	//Dollar/Franc duplication
 	
     @Test public void testMultiplication() {
     	Dollar five = new Dollar(5);
