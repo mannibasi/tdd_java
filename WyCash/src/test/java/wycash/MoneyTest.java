@@ -11,12 +11,13 @@ import org.junit.Test;
 
 public class MoneyTest {
     //TODO:
+	//Compare Francs with Dollars
 	//$5 + 10 CHF = $10 if rate is 2:1
 	//Money rounding?
 	//hashCode()
 	//Equal null
 	//Equal object
-	//Compare Francs with Dollars
+	//Common times
 	//
 	//DONE:
 	//$5 * 2 = $10
