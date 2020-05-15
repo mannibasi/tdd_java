@@ -4,23 +4,31 @@
 package wycash;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
 public class MoneyTest {
+    //TODO:
+	//equals()
+	//$5 + 10 CHF = $10 if rate is 2:1
+	//Make amount private
+	//Money rounding?
+	//
+	//DONE:
+	//$5 * 2 = $10
+	//Dollar side-effects?
+	//hashCode()
+	
     @Test public void testMultiplication() {
-        //TODO:
-    	//$5 + 10 CHF = $10 if rate is 2:1
-    	//Make amount private
-    	//Money rounding?
-    	//
-    	//DONE:
-    	//$5 * 2 = $10
-    	//Dollar side-effects?
     	Dollar five = new Dollar(5);
     	Dollar product = five.times(2); 
         assertEquals(10, product.amount);
         product = five.times(3);
         assertEquals(15, product.amount);
+    }
+    
+    @Test public void testEquality() {
+    	assertTrue(new Dollar(5).equals(new Dollar(5)));
     }
 }
