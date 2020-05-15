@@ -3,7 +3,7 @@
  */
 package WyCash;
 
-public class Library {
+public class Money {
     public boolean someLibraryMethod() {
         return true;
     }
