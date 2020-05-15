@@ -1,4 +1,4 @@
-package WyCash;
+package wycash;
 
 public class Dollar {
 
