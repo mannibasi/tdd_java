@@ -5,11 +5,11 @@ public class Dollar {
 	public int amount;
 
 	public Dollar(int i) {
-		// TODO Auto-generated constructor stub
+		this.amount = i;
 	}
 
 	public void times(int i) {
-		amount = (5*2);		
+		amount = amount * 2;		
 	}
 
 }
