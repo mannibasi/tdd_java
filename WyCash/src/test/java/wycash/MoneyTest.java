@@ -37,13 +37,7 @@ public class MoneyTest {
     @Test public void testEquality() {
     	assertTrue(Money.dollar(5).equals(Money.dollar(5)));
     	assertFalse(Money.dollar(5).equals(Money.dollar(6)));
-    	assertTrue(Money.franc(5).equals(Money.franc(5)));
-    	assertFalse(Money.franc(5).equals(Money.franc(6)));
     	assertFalse(Money.franc(5).equals(Money.dollar(5)));
-    }
-    
-    @Test public void testDifferentClassEquality() {
-    	assertTrue(new Money(10, "CHF").equals(Money.franc(10)));
     }
     
     @Test public void testFrancMultiplication() {
