@@ -1,11 +1,13 @@
 package wycash;
 
-public abstract class Money {
+public class Money {
 	
 	protected int amount;
 	protected String currency;
 	
-	public abstract Money times(int multiplier);
+	public Money times(int multiplier) {
+		return null;
+	}
 	
 	public Money(int amount, String currency) {
 		this.amount = amount;
