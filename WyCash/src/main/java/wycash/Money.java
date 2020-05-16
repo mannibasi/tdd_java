@@ -19,6 +19,10 @@ public class Money {
 		Money money = (Money) obj;
 		return amount == money.amount && getClass().equals(money.getClass());
 	}
+	
+	public String toString() {
+		return amount + " " + currency;
+	}
 
 	public static Money dollar(int amount) {
 		return new Dollar(amount, "USD");
