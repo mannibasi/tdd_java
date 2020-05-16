@@ -1,8 +1,10 @@
 package wycash;
 
-public class Money {
+public abstract class Money {
 	
 	protected int amount;
+	
+	public abstract Money times(int multiplier);
 	
 	@Override
 	public boolean equals(Object obj) {
