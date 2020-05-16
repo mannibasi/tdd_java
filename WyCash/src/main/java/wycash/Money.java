@@ -3,6 +3,7 @@ package wycash;
 public abstract class Money {
 	
 	protected int amount;
+	protected String currency;
 	
 	public abstract Money times(int multiplier);
 	
@@ -20,6 +21,8 @@ public abstract class Money {
 		return new Franc(amount);
 	}
 
-	protected abstract String currency();
+	protected String currency() {
+		return currency;
+	}
 
 }
