@@ -10,4 +10,9 @@ public class Dollar extends Money {
 		return new Dollar(amount * multiplier);
 	}
 
+	@Override
+	protected String currency() {
+		return "USD";
+	}
+
 }
