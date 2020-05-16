@@ -11,7 +11,6 @@ import org.junit.Test;
 
 public class MoneyTest {
     //TODO:
-	//Currency?
 	//Common times - further dollar/franc duplication
 	//$5 + 10 CHF = $10 if rate is 2:1
 	//Money rounding?
@@ -27,6 +26,7 @@ public class MoneyTest {
 	//Make amount private
 	//Dollar/Franc duplication
 	//Compare Francs with Dollars
+	//Currency?
 	
     @Test public void testMultiplication() {
     	Money five = Money.dollar(5);
