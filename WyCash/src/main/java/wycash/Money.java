@@ -7,6 +7,11 @@ public abstract class Money {
 	
 	public abstract Money times(int multiplier);
 	
+	public Money(int amount, String currency) {
+		this.amount = amount;
+		this.currency = currency;
+	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		Money money = (Money) obj;
