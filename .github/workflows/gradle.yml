@@ -11,9 +11,7 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 1.8
@@ -24,3 +22,8 @@ jobs:
       run: chmod +x WyCash/gradlew
     - name: Build with Gradle
       run: ./WyCash/gradlew build
+    - name: Scan with Sonar
+      env:
+        # to get access to secrets.SONAR_TOKEN, provide GITHUB_TOKEN
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: cd WyCash; ./gradlew sonarqube -Dsonar.login=${{ secrets.SONAR_TOKEN }}
