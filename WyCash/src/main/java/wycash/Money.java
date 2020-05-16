@@ -10,9 +10,8 @@ public class Money {
 		return amount == money.amount && getClass().equals(money.getClass());
 	}
 
-	public static Dollar dollar(int i) {
-		// TODO Auto-generated method stub
-		return null;
+	public static Dollar dollar(int amount) {
+		return new Dollar(amount);
 	}
 
 }
