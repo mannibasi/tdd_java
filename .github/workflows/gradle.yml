@@ -26,4 +26,7 @@ jobs:
       env:
         # to get access to secrets.SONAR_TOKEN, provide GITHUB_TOKEN
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: cd WyCash; ./gradlew sonarqube -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+      run: | 
+        cd WyCash
+        ./gradlew build jacocoTestReport
+        ./gradlew sonarqube -Dsonar.login=${{ secrets.SONAR_TOKEN }}
