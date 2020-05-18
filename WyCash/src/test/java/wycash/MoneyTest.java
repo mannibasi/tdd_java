@@ -11,8 +11,8 @@ import org.junit.Test;
 
 public class MoneyTest {
 	// TODO:
-	// $5 + 10 CHF = $10 if rate is 2:1
-	// $5 + $5 = $10
+	// Sum.plus
+	// Expression.times
 	// Return Money from $5 + $5
 	// Money rounding?
 	// hashCode()
@@ -32,6 +32,8 @@ public class MoneyTest {
 	// Bank.reduce(Money)
 	// Reduce(Bank, String)
 	// Reduce Money with conversion
+	// $5 + 10 CHF = $10 if rate is 2:1
+	// $5 + $5 = $10
 
 	@Test
 	public void testMultiplication() {
@@ -98,11 +100,11 @@ public class MoneyTest {
 	public void testIdentityRate() {
 		assertEquals(1, new Bank().rate("USD", "USD"));
 	}
-	
+
 	@Test
 	public void testMixedAddition() {
-		Money fiveBucks = Money.dollar(5);
-		Money tenFrancs = Money.franc(10);
+		Expression fiveBucks = Money.dollar(5);
+		Expression tenFrancs = Money.franc(10);
 		Bank bank = new Bank();
 		bank.addRate("CHF", "USD", 2);
 		Money result = bank.reduce(fiveBucks.plus(tenFrancs), "USD");
