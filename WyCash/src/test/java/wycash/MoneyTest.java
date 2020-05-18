@@ -11,8 +11,6 @@ import org.junit.Test;
 
 public class MoneyTest {
 	// TODO:
-	// Sum.plus
-	// Expression.times
 	// Return Money from $5 + $5
 	// Money rounding?
 	// hashCode()
@@ -34,6 +32,8 @@ public class MoneyTest {
 	// Reduce Money with conversion
 	// $5 + 10 CHF = $10 if rate is 2:1
 	// $5 + $5 = $10
+	// Sum.plus
+	// Expression.times
 
 	@Test
 	public void testMultiplication() {
@@ -110,4 +110,27 @@ public class MoneyTest {
 		Money result = bank.reduce(fiveBucks.plus(tenFrancs), "USD");
 		assertEquals(Money.dollar(10), result);
 	}
+
+	@Test
+	public void testSumPlusMoney() {
+		Expression fiveBucks = Money.dollar(5);
+		Expression tenFrancs = Money.franc(10);
+		Bank bank = new Bank();
+		bank.addRate("CHF", "USD", 2);
+		Expression sum = new Sum(fiveBucks, tenFrancs).plus(fiveBucks);
+		Money result = bank.reduce(sum, "USD");
+		assertEquals(Money.dollar(15), result);
+	}
+	
+	@Test
+	public void testSumTimes() {
+		Expression fiveBucks = Money.dollar(5);
+		Expression tenFrancs = Money.franc(10);
+		Bank bank = new Bank();
+		bank.addRate("CHF", "USD", 2);
+		Expression sum = new Sum(fiveBucks, tenFrancs).times(2);
+		Money result = bank.reduce(sum, "USD");
+		assertEquals(Money.dollar(20), result);		
+	}
+
 }
