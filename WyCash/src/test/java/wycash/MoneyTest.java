@@ -143,13 +143,13 @@ public class MoneyTest {
 	public void testMoneyHashCode() {
 		Money fiveBucks = Money.dollar(5);
 		int fiveBucksHash = fiveBucks.hashCode();
-		assert (fiveBucksHash != 0);
+		assertTrue(fiveBucksHash != 0);
 
 		Money fiveFrancs = Money.franc(5);
 		int fiveFrancsHash = fiveFrancs.hashCode();
-		assert (fiveFrancsHash != 0);
+		assertTrue(fiveFrancsHash != 0);
 
-		assert (fiveBucksHash != fiveFrancsHash);
+		assertTrue(fiveBucksHash != fiveFrancsHash);
 	}
 
 }

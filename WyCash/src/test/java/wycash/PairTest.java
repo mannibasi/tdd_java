@@ -31,20 +31,20 @@ public class PairTest {
 	public void testPairHash() {
 		Pair completePair = new Pair("xx", "yy");
 		int completePairHash = completePair.hashCode();
-		assert (completePairHash != 0);
-		
+		assertTrue(completePairHash != 0);
+
 		Pair anotherCompletePair = new Pair("abc", "def");
 		int anotherCompletePairHash = anotherCompletePair.hashCode();
 		assertFalse(completePairHash == anotherCompletePairHash);
 
 		Pair incompletePair = new Pair(null, "yy");
-		assert (incompletePair.hashCode() != 0);
+		assertTrue(incompletePair.hashCode() != 0);
 
 		Pair anotherIncompletePair = new Pair("xx", null);
-		assert (anotherIncompletePair.hashCode() != 0);
+		assertTrue(anotherIncompletePair.hashCode() != 0);
 
 		Pair nullPair = new Pair(null, null);
-		assert (nullPair.hashCode() != 0);
+		assertTrue(nullPair.hashCode() != 0);
 	}
 
 }
