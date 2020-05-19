@@ -30,7 +30,12 @@ public class PairTest {
 	@Test
 	public void testPairHash() {
 		Pair completePair = new Pair("xx", "yy");
-		assert (completePair.hashCode() != 0);
+		int completePairHash = completePair.hashCode();
+		assert (completePairHash != 0);
+		
+		Pair anotherCompletePair = new Pair("abc", "def");
+		int anotherCompletePairHash = anotherCompletePair.hashCode();
+		assertFalse(completePairHash == anotherCompletePairHash);
 
 		Pair incompletePair = new Pair(null, "yy");
 		assert (incompletePair.hashCode() != 0);
