@@ -121,7 +121,7 @@ public class MoneyTest {
 		Money result = bank.reduce(sum, "USD");
 		assertEquals(Money.dollar(15), result);
 	}
-	
+
 	@Test
 	public void testSumTimes() {
 		Expression fiveBucks = Money.dollar(5);
@@ -130,7 +130,26 @@ public class MoneyTest {
 		bank.addRate("CHF", "USD", 2);
 		Expression sum = new Sum(fiveBucks, tenFrancs).times(2);
 		Money result = bank.reduce(sum, "USD");
-		assertEquals(Money.dollar(20), result);		
+		assertEquals(Money.dollar(20), result);
+	}
+
+	@Test
+	public void testMoneyToString() {
+		Money fiveBucks = Money.dollar(5);
+		assertEquals("5 USD", fiveBucks.toString());
+	}
+
+	@Test
+	public void testMoneyHashCode() {
+		Money fiveBucks = Money.dollar(5);
+		int fiveBucksHash = fiveBucks.hashCode();
+		assert (fiveBucksHash != 0);
+
+		Money fiveFrancs = Money.franc(5);
+		int fiveFrancsHash = fiveFrancs.hashCode();
+		assert (fiveFrancsHash != 0);
+
+		assert (fiveBucksHash != fiveFrancsHash);
 	}
 
 }
