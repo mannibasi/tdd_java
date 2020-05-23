@@ -3,8 +3,8 @@
  */
 package wycash;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 import org.junit.Test;
 
@@ -19,32 +19,32 @@ public class PairTest {
 		Pair nullPair = null;
 		Object someOtherObject = new Object();
 
-		assertTrue(pair.equals(pair));
-		assertTrue(pair.equals(equivalentPair));
-		assertFalse(pair.equals(someOtherPair));
-		assertFalse(pair.equals(nullPair));
-		assertFalse(pair.equals(pairWithNullValues));
-		assertFalse(pair.equals(someOtherObject));
+		assertEquals(pair, pair);
+		assertEquals(pair, equivalentPair);
+		assertNotEquals(pair, someOtherPair);
+		assertNotEquals(pair, nullPair);
+		assertNotEquals(pair, pairWithNullValues);
+		assertNotEquals(pair, someOtherObject);
 	}
 
 	@Test
 	public void testPairHash() {
 		Pair completePair = new Pair("xx", "yy");
 		int completePairHash = completePair.hashCode();
-		assertTrue(completePairHash != 0);
+		assertNotEquals(completePairHash, 0);
 
 		Pair anotherCompletePair = new Pair("abc", "def");
 		int anotherCompletePairHash = anotherCompletePair.hashCode();
-		assertFalse(completePairHash == anotherCompletePairHash);
+		assertNotEquals(completePairHash, anotherCompletePairHash);
 
 		Pair incompletePair = new Pair(null, "yy");
-		assertTrue(incompletePair.hashCode() != 0);
+		assertNotEquals(incompletePair.hashCode(), 0);
 
 		Pair anotherIncompletePair = new Pair("xx", null);
-		assertTrue(anotherIncompletePair.hashCode() != 0);
+		assertNotEquals(anotherIncompletePair.hashCode(), 0);
 
 		Pair nullPair = new Pair(null, null);
-		assertTrue(nullPair.hashCode() != 0);
+		assertNotEquals(nullPair.hashCode(), 0);
 	}
 
 }

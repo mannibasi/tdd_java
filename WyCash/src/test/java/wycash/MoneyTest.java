@@ -4,8 +4,7 @@
 package wycash;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertNotEquals;
 
 import org.junit.Test;
 
@@ -44,9 +43,9 @@ public class MoneyTest {
 
 	@Test
 	public void testEquality() {
-		assertTrue(Money.dollar(5).equals(Money.dollar(5)));
-		assertFalse(Money.dollar(5).equals(Money.dollar(6)));
-		assertFalse(Money.franc(5).equals(Money.dollar(5)));
+		assertEquals(Money.dollar(5), Money.dollar(5));
+		assertNotEquals(Money.dollar(5), Money.dollar(6));
+		assertNotEquals(Money.franc(5), Money.dollar(5));
 	}
 
 	@Test
@@ -143,13 +142,13 @@ public class MoneyTest {
 	public void testMoneyHashCode() {
 		Money fiveBucks = Money.dollar(5);
 		int fiveBucksHash = fiveBucks.hashCode();
-		assertTrue(fiveBucksHash != 0);
+		assertNotEquals(fiveBucksHash, 0);
 
 		Money fiveFrancs = Money.franc(5);
 		int fiveFrancsHash = fiveFrancs.hashCode();
-		assertTrue(fiveFrancsHash != 0);
+		assertNotEquals(fiveFrancsHash, 0);
 
-		assertTrue(fiveBucksHash != fiveFrancsHash);
+		assertNotEquals(fiveBucksHash, fiveFrancsHash);
 	}
 
 }
