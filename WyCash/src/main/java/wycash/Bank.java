@@ -1,10 +1,10 @@
 package wycash;
 
-import java.util.Hashtable;
+import java.util.HashMap;
 
 public class Bank {
 
-	private Hashtable<Pair, Integer> rates = new Hashtable<>();
+	private HashMap<Pair, Integer> rates = new HashMap<>();
 
 	public Money reduce(Expression source, String to) {
 		return source.reduce(this, to);
